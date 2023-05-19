@@ -18,9 +18,9 @@ export function getUser(): User | null {
 
   const user: User = jwtDecode(token);
 
-  return user
+  return user;
 }
 
 export function logout() {
-  cookies().set(CLIENT_TOKEN_KEY, '')
+  cookies().set(CLIENT_TOKEN_KEY, '');
 }
