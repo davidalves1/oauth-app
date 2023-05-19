@@ -1,7 +1,6 @@
 import { getUser } from '@/lib/auth';
 import Link from 'next/link';
 import { useMemo } from 'react';
-import { LogoutButton } from './components/LogoutButton';
 
 export default function Home() {
   const user = getUser();
@@ -17,7 +16,9 @@ export default function Home() {
         Registrar
       </Link>
       <h2>{isAutenticated ? `Olá, ${user?.name}` : 'Usuário não registrado'}</h2>
-      <LogoutButton />
+      <Link href="/api/auth/logout" className="bg-gray-500 text-white py-3 px-4 rounded-md hover:bg-gray-600 transition">
+        Sair
+      </Link>
     </main>
   )
 }
