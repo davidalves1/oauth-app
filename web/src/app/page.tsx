@@ -1,11 +1,10 @@
 import { getUser } from '@/lib/auth';
 import Link from 'next/link';
-import { useMemo } from 'react';
 
 export default function Home() {
   const user = getUser();
 
-  const isAutenticated = useMemo(() => !!user?.sub, [user]);
+  const isAutenticated = !!user?.sub;
 
   return (
     <main className="flex min-h-screen flex-col items-center gap-8 p-24">
